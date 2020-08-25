@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>my page</title>
+    <script src="../static/js/jquery.js"></script>
+</head>
+<body>
+        <h1>大吉大利</h1>
+        <h3>实时报道</h3>
+<button>
+    点我有惊喜
+</button>
+<script>
+    $("button").click(function () {
+        $.ajax({
+            url:'ajax',
+            type:'post',
+            data:{'name':'李四','score':'99'},
+            success:function (dd) {
+                $('h1').html('武汉剩余'+dd)
+            },error:function () {
+                alert('发送请求失败')
+            }
+
+        })
+    })
+
+</script>
+</body>
+</html>
